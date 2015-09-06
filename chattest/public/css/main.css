@@ -1,0 +1,39 @@
+html, body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.chat-window .collapsible-header {
+    min-height: 1rem;
+    line-height: 1.5rem;
+    padding: 0.5rem 1rem;
+    height: auto;
+}
+
+.chat-window .collapsible-body p {
+    padding: 10px;
+}
+
+.chat-window .chat-history {
+    max-height: 50vh;
+    overflow-y: scroll;
+    /*padding: 30px;*/
+}
+
+@media(min-width: 415px) {
+    .brand-logo {
+        margin-left: 10px;
+    }
+    .chat-window .chat-history {
+        padding: 30px;
+    }
+}
+
+@media(max-width: 414px) {
+    .chat-window .chat-history {
+        padding: 7px;
+    }
+}

@@ -1,5 +1,41 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    nav.cyan
+      .nav-wrapper
+        a.brand-logo(href='#') #{title}
+        //
+            ul#nav-mobile.right.hide-on-med-and-down
+              li
+                a(href='#') CSS
+              li
+                a(href='#') Components
+              li
+                a(href='#') JavaScript
+
+    .container
+        .card-panel.white.z-depth-1.chat-window
+            h3 Chat Test
+            ul.collapsible.popout.chat-history(data-collapsible='accordion')
+                - var items = chatHistory
+                each item in items 
+                    li 
+                        .collapsible-header #{item.message}
+                        .collapsible-body
+                            p.metadata Sent at #{item.sentAt}, by #{item.sentBy}
+                    
+            .row
+                form(method='post', class='col s12')
+                    .row
+                    .input-field.col.s12.m8
+                        i.material-icons.prefix mode_edit
+                        textarea(id='icon_prefix2', name='message', class='materialize-textarea')
+                        label(for='icon_prefix2') Message
+                    .col.s12.m4
+                        button.btn.waves-effect.waves-light(type='submit', name='action')
+                            | Submit
+                            i.material-icons send
+    script.
+        if(true) {
+            console.log("Hello World!")
+        }
