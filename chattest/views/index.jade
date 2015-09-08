@@ -17,12 +17,12 @@ block content
         .card-panel.white.z-depth-1.chat-window
             h3 Chat Test
             ul.collapsible.popout.chat-history(data-collapsible='accordion')
-                - var items = chatHistory
+                - var items = [0,0,0,0,0,0,0]
                 each item in items 
                     li 
-                        .collapsible-header #{item.message}
+                        .collapsible-header {item.message}
                         .collapsible-body
-                            p.metadata Sent at #{item.sentAt}, by #{item.sentBy}
+                            p.metadata Sent at {item.sentAt}, by {item.sentBy}
                     
             .row
                 form(method='post', class='col s12')
